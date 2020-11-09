@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BGFX
   - Water
   - UI
-  - 
+  - Actors
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background FX
+    uniqueID: 2228862811
+    locked: 0
+  - name: Actors
+    uniqueID: 3572904349
     locked: 0
