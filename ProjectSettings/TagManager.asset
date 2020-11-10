@@ -44,6 +44,9 @@ TagManager:
   - name: Background FX
     uniqueID: 2228862811
     locked: 0
+  - name: Actor FX
+    uniqueID: 1510202265
+    locked: 0
   - name: Actors
     uniqueID: 3572904349
     locked: 0

@@ -414,17 +414,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7216981, g: 0.98383176, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 0.9581463, b: 0.6462264, a: 1}
+        key1: {r: 0.7216981, g: 0.98383176, b: 1, a: 0.61960787}
+        key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
+        ctime0: 193
         ctime1: 65535
-        ctime2: 0
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1054,7 +1054,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3407,7 +3407,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -3418,9 +3418,9 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -3429,7 +3429,7 @@ ParticleSystem:
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -3464,7 +3464,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3473,7 +3473,7 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -3482,7 +3482,7 @@ ParticleSystem:
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -3568,7 +3568,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     range: {x: 0, y: 1}
-    separateAxes: 0
+    separateAxes: 1
   RotationBySpeedModule:
     enabled: 0
     x:
@@ -5160,9 +5160,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.05
-      minScalar: 5
+      minMaxState: 3
+      scalar: 0.02
+      minScalar: 0.01
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5213,13 +5213,13 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 3
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.7216981, g: 0.98383176, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0.7254902}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5247,8 +5247,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.99892044, g: 1, b: 0.7028302, a: 1}
+        key1: {r: 0.8254717, g: 0.9703357, b: 1, a: 0.67058825}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5276,9 +5276,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.005
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.003
+      minScalar: 0.002
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5329,7 +5329,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5382,7 +5382,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5858,7 +5858,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 6.03
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -14600,9 +14600,8 @@ GameObject:
   m_Component:
   - component: {fileID: 766246752}
   - component: {fileID: 766246756}
-  - component: {fileID: 766246754}
   - component: {fileID: 766246753}
-  - component: {fileID: 766246755}
+  - component: {fileID: 766246754}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -14637,8 +14636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.4
+  m_PivotOffset: {x: 20, y: 0, z: 0}
+  m_AmplitudeGain: 0.6
   m_FrequencyGain: 0.1
   mNoiseOffsets: {x: -888.7291, y: -584.87915, z: 633.5077}
 --- !u!114 &766246754
@@ -14650,50 +14649,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 766246751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -2.33, z: -10}
-  m_XDamping: 6
-  m_YDamping: 4.1
-  m_ZDamping: 0
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
---- !u!114 &766246755
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766246751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7633c93f0364a418841eeb8b058634, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
+  m_LookaheadTime: 0.065
+  m_LookaheadSmoothing: 4.3
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
-  m_ScreenX: 0.4948007
-  m_ScreenY: 0.5034661
-  m_DeadZoneWidth: 0.5365338
-  m_DeadZoneHeight: 0.49
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_TargetMovementOnly: 1
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 10
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_DeadZoneDepth: 0
+  m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
-  m_GroupFramingSize: 0.09
-  m_FramingMode: 2
-  m_FrameDamping: 4.7
+  m_GroupFramingMode: 2
   m_AdjustmentMode: 0
+  m_GroupFramingSize: 0.8
   m_MaxDollyIn: 5000
   m_MaxDollyOut: 5000
   m_MinimumDistance: 1
@@ -14701,7 +14682,7 @@ MonoBehaviour:
   m_MinimumFOV: 3
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 5
-  m_MaximumOrthoSize: 14.5
+  m_MaximumOrthoSize: 15
 --- !u!114 &766246756
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -14783,7 +14764,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -722062947
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 10c0d67d892fd4771bd11fc272a93e3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14846,14 +14827,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06569451, g: 0.050329298, b: 0.122641504, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 61b27831dabc1433380baa9e4858a571, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -14953,10 +14934,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2954031086127732910, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2954031086127732911, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -15001,17 +14978,121 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2954031087446028242, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
+    - target: {fileID: 3738616017416017571, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ace548fa5033d4612892a62e36e8b209, type: 2}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2954031087446028242, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -722062947
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.46
       objectReference: {fileID: 0}
-    - target: {fileID: 2954031087446028244, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
-      propertyPath: m_Layer
-      value: 6
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 65150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 11180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 31418
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime3
+      value: 51657
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime4
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime5
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.74761385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.2028302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.4168139
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 0.99607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.g
+      value: 0.98934275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.r
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.g
+      value: 0.8835709
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key4.b
+      value: 0.7817602
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key4.g
+      value: 0.13529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key4.r
+      value: 0.993218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key5.b
+      value: 0.7817602
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key5.g
+      value: 0.13529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key5.r
+      value: 0.993218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762721455965179461, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
@@ -15049,7 +15130,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_Targets:
   - target: {fileID: 661173275}
-    weight: 2
+    weight: 1.2
     radius: 0
   - target: {fileID: 1973817407}
     weight: 1
@@ -15062,7 +15143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442098293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.82, y: 12.333334, z: 0}
+  m_LocalPosition: {x: 0.7618182, y: 11.927273, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15107,7 +15188,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1442098295}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 166.1
     Dutch: 0
@@ -15127,8 +15208,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598481540}
-  m_LocalRotation: {x: -0.11724767, y: 0.004344465, z: 0.00051292113, w: 0.99309313}
-  m_LocalPosition: {x: 0.82, y: 10.003334, z: -10}
+  m_LocalRotation: {x: -0.120283745, y: 0.008685671, z: 0.0010524268, w: 0.992701}
+  m_LocalPosition: {x: 0.58566225, y: 9.451232, z: -10.065821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 766246752}
@@ -15366,7 +15447,7 @@ Camera:
   far clip plane: 166.1
   field of view: 60
   orthographic: 1
-  orthographic size: 12.083732
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -15389,8 +15470,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860470034}
-  m_LocalRotation: {x: -0.11724767, y: 0.004344465, z: 0.00051292113, w: 0.99309313}
-  m_LocalPosition: {x: 0.82, y: 10.003334, z: -10}
+  m_LocalRotation: {x: -0.120283745, y: 0.008685671, z: 0.0010524268, w: 0.992701}
+  m_LocalPosition: {x: 0.58566225, y: 9.451232, z: -10.065821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
