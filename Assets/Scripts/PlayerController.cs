@@ -6,15 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    #region newInput
-
-    [SerializeField] private PlayerInput _playerInput;
-
-    #endregion
-
     private Vector2 _inputMovement;
     private float moveSpeed = 10f;
-    private Rigidbody2D _rigidbody2D;
+    private Rigidbody2D _rb;
+    [SerializeField] private ParticleSystem _trailParticles;
 
     #region DashCode
 
@@ -26,32 +21,30 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
-    private void OnEnable()
+    private void Awake()
     {
-        _playerInput.Player.Move.performed += HandleMove;
-        _playerInput.Player.Move.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _playerInput.Player.Move.performed -= HandleMove;
-        _playerInput.Player.Move.Disable();
-    }
-
-    private void HandleMove(InputAction.CallbackContext context)
-    {
-        Debug.Log("Move");
     }
 
     private void Start()
     {
         _dashTime = _startDashTime;
+        _trailParticles.Play();
     }
 
     void Update()
     {
         Move();
+
+        ParticleSystem.EmissionModule emission = _trailParticles.emission;
+        if (_inputMovement.y < 0)
+        {
+            emission.enabled = false;
+        }
+        else if (_inputMovement.y >= 0)
+        {
+            emission.enabled = true;
+            Debug.Log(_trailParticles.isPlaying);
+        }
     }
 
     public void Move()
@@ -77,7 +70,7 @@ public class PlayerController : MonoBehaviour
     // Called on right trigger press
     void OnOffence()
     {
-        isDashing = true;
+        // isDashing = true;
         Debug.Log("offensive action is on!");
     }
 

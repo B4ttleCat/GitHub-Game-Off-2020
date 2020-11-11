@@ -20,23 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7299d31-d496-4044-8f15-86a15e76ade5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Star Particle.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Star Particle.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Star.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Skybox_Mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Skybox_Mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInput.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInput.inputactions.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/References.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/References.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Space BG.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Space BG.afdesign" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Space BG.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Space BG.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Star Particle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Star Particle.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +66,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -111,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604883174473</updated>
-      <workItem from="1604883183007" duration="9860000" />
+      <workItem from="1604883183007" duration="12377000" />
     </task>
     <servers />
   </component>
@@ -136,6 +122,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="581" y="393" key="SettingsEditor" timestamp="1605094811426">
+      <screen x="0" y="23" width="2495" height="1417" />
+    </state>
+    <state x="581" y="393" key="SettingsEditor/365.1463.1792.1097/0.23.2495.1417@0.23.2495.1417" timestamp="1605094811426" />
     <state x="1005" y="469" width="672" height="678" key="search.everywhere.popup" timestamp="1605089339934">
       <screen x="0" y="23" width="2495" height="1417" />
     </state>
