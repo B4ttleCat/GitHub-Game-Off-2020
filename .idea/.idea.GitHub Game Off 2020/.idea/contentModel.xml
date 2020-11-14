@@ -9,6 +9,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Ball.cs" t="Include" />
+          <e p="BoostSystem.cs" t="Include" />
           <e p="InvisibleOffScreen.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="References.cs" t="Include" />

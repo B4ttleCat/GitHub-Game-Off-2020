@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour
 
     void Awake()
     {
+        References.Ball = this;
         _rb = GetComponent<Rigidbody2D>();
     }
 

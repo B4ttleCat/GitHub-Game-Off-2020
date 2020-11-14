@@ -7,17 +7,21 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _trailParticles;
+    [SerializeField] private float _baseMoveSpeed;
 
     private Controls _controls = null;
-    private float moveSpeed = 10f;
     private Rigidbody2D _rb;
+    
+    private float _currentMoveSpeed;
+    
+    public float BaseMoveSpeed => _baseMoveSpeed;
 
-    [SerializeField] private float _dashSpeed;
-    private bool isDashing;
+public float CurrentMoveSpeed;
 
     private void Awake()
     {
         _controls = new Controls();
+        References.Controls = _controls;
     }
 
     private void OnEnable()
@@ -32,22 +36,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        // the underscore here denotes you don't need to pass anything into the Offence method
-        _controls.Player.Offence.started += _ => OffenceStarted();
-        _controls.Player.Offence.performed += _ => OffencePerformed();
-
-        // If you want to pass in a value, use it like this
-        // "context" is just a temp variable that could actually be called anything
-        // _controls.Player.Offence.performed += context => Offence(cxt.ReadValue<float>());
-
         _trailParticles.Play();
+        _currentMoveSpeed = _baseMoveSpeed;
     }
 
     void Update()
     {
         Vector2 movementInput = ReadMovementInput();
         Move(movementInput);
-
         UpdateParticleSystem(movementInput);
     }
 
@@ -58,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             emission.enabled = false;
         }
+
         else if (movementInput.y >= 0)
         {
             emission.enabled = true;
@@ -73,32 +70,11 @@ public class PlayerController : MonoBehaviour
             x = movementInput.x,
             y = movementInput.y
         }.normalized;
-
         return movementInput;
     }
 
     public void Move(Vector2 movement)
     {
-        if (isDashing)
-        {
-            transform.Translate(movement * _dashSpeed * Time.deltaTime);
-            Debug.Log("performing dash");
-        }
-        else
-        {
-            transform.Translate(movement * moveSpeed * Time.deltaTime);
-        }
-    }
-
-    public void OffenceStarted()
-    {
-        isDashing = true;
-        Debug.Log($"isDashing = {isDashing}");
-    }
-
-    public void OffencePerformed()
-    {
-        isDashing = false;
-        Debug.Log($"isDashing = {isDashing}");
+        transform.Translate(movement * CurrentMoveSpeed * Time.deltaTime);
     }
 }
