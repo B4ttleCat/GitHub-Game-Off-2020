@@ -20,20 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7299d31-d496-4044-8f15-86a15e76ade5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Input.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/Controls.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/Controls.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/Controls.inputactions" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Input/Controls.inputactions.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/BallTrail_Mat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/BallTrail_Mat.mat.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GitHub Game Off 2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInput.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerInput.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/Controls.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Space BG.afdesign" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Space BG.afdesign" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +100,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604883174473</updated>
-      <workItem from="1604883183007" duration="16809000" />
+      <workItem from="1604883183007" duration="17959000" />
+      <workItem from="1605349515509" duration="335000" />
+      <workItem from="1605349925199" duration="200000" />
     </task>
     <servers />
   </component>
@@ -126,6 +121,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

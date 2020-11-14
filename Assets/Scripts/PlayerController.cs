@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
         else if (movementInput.y >= 0)
         {
             emission.enabled = true;
-            Debug.Log(_trailParticles.isPlaying);
         }
     }
 
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"isDashing = {isDashing}");
     }
 
-    private void OffencePerformed()
+    public void OffencePerformed()
     {
         isDashing = false;
         Debug.Log($"isDashing = {isDashing}");
