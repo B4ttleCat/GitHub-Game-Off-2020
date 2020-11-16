@@ -42,16 +42,26 @@ public class BoostSystem : MonoBehaviour
 
     private void CalculateBoost()
     {
+        // boosting and more than empty
         if (_isBoosting && _boostRemaining > _BoostBarSlider.minValue)
         {
+            _BoostBarSlider.gameObject.SetActive(true);
             _boostRemaining -= Time.deltaTime * _boostDepletionRate;
             UpdateBoostBarUI(_boostRemaining);
         }
 
+        // not boosting and less than full
         else if (!_isBoosting && _boostRemaining < _BoostBarSlider.maxValue)
         {
+            _BoostBarSlider.gameObject.SetActive(true);
             _boostRemaining += Time.deltaTime * _boostFillRate;
             UpdateBoostBarUI(_boostRemaining);
+        }
+
+        // not boosting and full
+        else
+        {
+            _BoostBarSlider.gameObject.SetActive(false);
         }
     }
 
