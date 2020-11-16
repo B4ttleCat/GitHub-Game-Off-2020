@@ -1,21 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(PlayerController))]
 public class BoostSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject _BoostBarPrefab;
-    [SerializeField] private float _boostAmount;
+    [SerializeField] private Slider _BoostBarSlider;
+    [SerializeField] private float _boostDepletionRate;
+    [SerializeField] private float _boostFillRate;
     [SerializeField] private float _boostSpeed;
 
+    private float _boostRemaining;
     private PlayerController _player;
     private bool _isBoosting;
 
     private void Awake()
     {
-        _player = gameObject.GetComponent<PlayerController>();
+        _player = gameObject.GetComponentInParent<PlayerController>();
     }
 
     private void Start()
@@ -27,15 +30,43 @@ public class BoostSystem : MonoBehaviour
         // If you want to pass in a value, use it like this
         // "context" is just a temp variable that could actually be called anything
         // _controls.Player.Offence.performed += context => Offence(cxt.ReadValue<float>());
+
+        _boostRemaining = _BoostBarSlider.maxValue;
+        _BoostBarSlider.value = _boostRemaining;
+    }
+
+    private void Update()
+    {
+        CalculateBoost();
+    }
+
+    private void CalculateBoost()
+    {
+        if (_isBoosting && _boostRemaining > _BoostBarSlider.minValue)
+        {
+            _boostRemaining -= Time.deltaTime * _boostDepletionRate;
+            UpdateBoostBarUI(_boostRemaining);
+        }
+
+        else if (!_isBoosting && _boostRemaining < _BoostBarSlider.maxValue)
+        {
+            _boostRemaining += Time.deltaTime * _boostFillRate;
+            UpdateBoostBarUI(_boostRemaining);
+        }
+    }
+
+    private void UpdateBoostBarUI(float boost)
+    {
+        _BoostBarSlider.value = boost;
     }
 
     public void BoostStarted()
     {
-        if (_boostAmount <= 0) return;
+        if (_boostDepletionRate <= 0) return;
 
         _isBoosting = true;
         _player.CurrentMoveSpeed = _boostSpeed;
-        
+
         // Debug.Log($"isDashing = {_isBoosting}");
     }
 

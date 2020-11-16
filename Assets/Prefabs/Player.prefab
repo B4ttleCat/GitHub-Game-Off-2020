@@ -198,8 +198,9 @@ GameObject:
   - component: {fileID: 1360587019}
   - component: {fileID: 1360587018}
   - component: {fileID: 1360587017}
+  - component: {fileID: 3837822312562578300}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Boost System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,6 +287,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3837822312562578300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360587015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb9a49b446594366aa90086fda16194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BoostBarSlider: {fileID: 2127434110}
+  _boostDepletionRate: 5
+  _boostSpeed: 20
 --- !u!1 &2127434108
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +387,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.667
+  m_Value: 0.587
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5202,7 +5218,6 @@ GameObject:
   - component: {fileID: 2954031086127732909}
   - component: {fileID: 2954031086127732908}
   - component: {fileID: 3040778136188156860}
-  - component: {fileID: 2136090796}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5310,7 +5325,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/SwitchProControllerHID/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136090796}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BoostSystem, Assembly-CSharp
         m_MethodName: BoostStarted
         m_Mode: 1
@@ -5350,6 +5365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trailParticles: {fileID: 7762721455965179461}
+  _baseMoveSpeed: 10
   CurrentMoveSpeed: 10
 --- !u!114 &3040778136188156860
 MonoBehaviour:
@@ -5363,21 +5379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809ba52c966df47e09691df105e99a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2136090796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2954031086127732910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb9a49b446594366aa90086fda16194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBarPrefab: {fileID: 2127434108}
-  _boostAmount: 10
-  _boostMultiplier: 2
 --- !u!1 &2954031087446028244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,7 +5390,7 @@ GameObject:
   - component: {fileID: 2954031087446028245}
   - component: {fileID: 2954031087446028242}
   m_Layer: 6
-  m_Name: female_jump
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
