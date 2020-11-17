@@ -59,7 +59,7 @@ public class BoostSystem : MonoBehaviour
         }
 
         // not boosting and full
-        else
+        if (_boostRemaining >= _BoostBarSlider.maxValue)
         {
             _BoostBarSlider.gameObject.SetActive(false);
         }
@@ -76,8 +76,6 @@ public class BoostSystem : MonoBehaviour
 
         _isBoosting = true;
         _player.CurrentMoveSpeed = _boostSpeed;
-
-        // Debug.Log($"isDashing = {_isBoosting}");
     }
 
     public void BoostEnded()

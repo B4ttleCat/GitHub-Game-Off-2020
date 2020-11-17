@@ -6,17 +6,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _trailParticles;
-    [SerializeField] private float _baseMoveSpeed;
+    [SerializeField] 
+    private ParticleSystem _trailParticles;
+    [SerializeField] 
+    private float _baseMoveSpeed;
 
     private Controls _controls = null;
     private Rigidbody2D _rb;
-    
+
     private float _currentMoveSpeed;
-    
+
     public float BaseMoveSpeed => _baseMoveSpeed;
 
-public float CurrentMoveSpeed;
+    public float CurrentMoveSpeed;
+
+    [SerializeField]
+    private ParticleSystem.MinMaxCurve slowParticleSize;
+
+    [SerializeField]
+    private ParticleSystem.MinMaxCurve idleParticleSize;
+    
+    [SerializeField]
+    private ParticleSystem.MinMaxCurve regularParticleSize;
+
+    [SerializeField]
+    private ParticleSystem.MinMaxCurve boostParticleSize;
 
     private void Awake()
     {
@@ -49,15 +63,21 @@ public float CurrentMoveSpeed;
 
     private void UpdateParticleSystem(Vector2 movementInput)
     {
-        ParticleSystem.EmissionModule emission = _trailParticles.emission;
+        ParticleSystem.MainModule psMainModule = _trailParticles.main;
+        
         if (movementInput.y < 0)
         {
-            emission.enabled = false;
+            psMainModule.startSize = slowParticleSize;
+        }
+        
+        else if (movementInput.y == 0)
+        {
+            psMainModule.startSize = idleParticleSize;
         }
 
-        else if (movementInput.y >= 0)
+        else if (movementInput.y > 0)
         {
-            emission.enabled = true;
+            psMainModule.startSize = regularParticleSize;
         }
     }
 
