@@ -20013,7 +20013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3837822312562578300, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
       propertyPath: _boostDepletionRate
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837822312562578300, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
+      propertyPath: boostSpeedMultiplier
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 3837822312562578300, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}
       propertyPath: _boostSpeedMultiplier

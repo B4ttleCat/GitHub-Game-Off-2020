@@ -10,7 +10,7 @@ public class BoostSystem : MonoBehaviour
     [SerializeField] private Slider _BoostBarSlider;
     [SerializeField] private float _boostDepletionRate;
     [SerializeField] private float _boostFillRate;
-    public float _boostSpeedMultiplier;
+    public float boostSpeedMultiplier;
 
     private float _boostRemaining;
     private PlayerController _player;

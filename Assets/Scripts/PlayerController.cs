@@ -8,24 +8,25 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float _moveSpeedMultiplier;
-    public float MoveSpeedMultiplier => _moveSpeedMultiplier;
-    [HideInInspector] public float CurrentMoveSpeed;
     
     [Space]
     [Header("Particles")]
     [SerializeField] private ParticleSystem _trailParticles;
+
     [SerializeField] private ParticleSystem.MinMaxCurve slowParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve idleParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve regularParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve boostParticleSize;
-    
+
     private Controls _controls = null;
     private Rigidbody2D _rb;
+    private BoostSystem _boost;
 
     private void Awake()
     {
         _controls = new Controls();
         References.Controls = _controls;
+        _boost = GetComponentInChildren<BoostSystem>();
     }
 
     private void OnEnable()
@@ -46,30 +47,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 movementInput = ReadMovementInput();
-
-        BoostSystem boost = GetComponentInChildren<BoostSystem>();
         
-        Debug.Log(boost.name);
-        // Debug.Log(boost.isBoosting);
-        
-        if (boost != null)
-        {
-            if (boost.isBoosting) Move(movementInput, boost._boostSpeedMultiplier * _moveSpeedMultiplier);
-            else Move(movementInput, _moveSpeedMultiplier);
-        }
-        
+        Move(movementInput, _moveSpeedMultiplier);
         UpdateParticleSystem(movementInput);
     }
 
     private void UpdateParticleSystem(Vector2 movementInput)
     {
         ParticleSystem.MainModule psMainModule = _trailParticles.main;
-        
+
         if (movementInput.y < 0)
         {
             psMainModule.startSize = slowParticleSize;
         }
-        
+
         else if (movementInput.y == 0)
         {
             psMainModule.startSize = idleParticleSize;
@@ -95,6 +86,11 @@ public class PlayerController : MonoBehaviour
 
     public void Move(Vector2 movement, float speedMultiplier)
     {
+        if (_boost.isBoosting)
+        {
+            speedMultiplier *= _boost.boostSpeedMultiplier;
+        }
+        
         Vector2 MultipledMovementVector = movement * speedMultiplier * References.GameSpeed;
         transform.Translate(MultipledMovementVector * Time.deltaTime);
     }
