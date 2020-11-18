@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             x = movementInput.x,
             y = movementInput.y
         }.normalized;
-        return movementInput;
+        return movement;
     }
 
     public void Move(Vector2 movement)
