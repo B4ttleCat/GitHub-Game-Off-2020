@@ -81,7 +81,7 @@ public class BoostSystem : MonoBehaviour
     public void BoostEnded()
     {
         _isBoosting = false;
-        _player.CurrentMoveSpeed = _player.BaseMoveSpeed;
+        _player.CurrentMoveSpeed = _player.BaseMoveSpeedMultiplier;
         // Debug.Log($"isDashing = {_isBoosting}");
     }
 }

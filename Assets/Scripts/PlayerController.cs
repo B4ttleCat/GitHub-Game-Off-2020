@@ -6,31 +6,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] 
-    private ParticleSystem _trailParticles;
-    [SerializeField] 
-    private float _baseMoveSpeed;
-
+    [SerializeField] private ParticleSystem _trailParticles;
+    [SerializeField] private ParticleSystem.MinMaxCurve slowParticleSize;
+    [SerializeField] private ParticleSystem.MinMaxCurve idleParticleSize;
+    [SerializeField] private ParticleSystem.MinMaxCurve regularParticleSize;
+    [SerializeField] private ParticleSystem.MinMaxCurve boostParticleSize;
+   
+    [SerializeField] private float _baseMoveSpeedMultiplier;
+    public float BaseMoveSpeedMultiplier => _baseMoveSpeedMultiplier;
+    [HideInInspector] public float CurrentMoveSpeed;
+    
+    private float _currentMoveSpeed;
+    
     private Controls _controls = null;
     private Rigidbody2D _rb;
-
-    private float _currentMoveSpeed;
-
-    public float BaseMoveSpeed => _baseMoveSpeed;
-
-    public float CurrentMoveSpeed;
-
-    [SerializeField]
-    private ParticleSystem.MinMaxCurve slowParticleSize;
-
-    [SerializeField]
-    private ParticleSystem.MinMaxCurve idleParticleSize;
-    
-    [SerializeField]
-    private ParticleSystem.MinMaxCurve regularParticleSize;
-
-    [SerializeField]
-    private ParticleSystem.MinMaxCurve boostParticleSize;
 
     private void Awake()
     {
@@ -51,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _trailParticles.Play();
-        _currentMoveSpeed = _baseMoveSpeed;
+        _currentMoveSpeed = _baseMoveSpeedMultiplier;
     }
 
     void Update()

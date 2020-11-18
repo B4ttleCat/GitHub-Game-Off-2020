@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-
+        transform.Translate(Vector3.up * References.GameSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
