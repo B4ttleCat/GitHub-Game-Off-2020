@@ -45,29 +45,28 @@ public class BoostSystem : MonoBehaviour
         // boosting and more than empty
         if (_isBoosting && _boostRemaining > _BoostBarSlider.minValue)
         {
-            _BoostBarSlider.gameObject.SetActive(true);
             _boostRemaining -= Time.deltaTime * _boostDepletionRate;
-            UpdateBoostBarUI(_boostRemaining);
         }
 
         // not boosting and less than full
         else if (!_isBoosting && _boostRemaining < _BoostBarSlider.maxValue)
         {
-            _BoostBarSlider.gameObject.SetActive(true);
             _boostRemaining += Time.deltaTime * _boostFillRate;
-            UpdateBoostBarUI(_boostRemaining);
         }
+
+        UpdateBoostBarUI(_boostRemaining);
+    }
+
+    private void UpdateBoostBarUI(float boost)
+    {
+        _BoostBarSlider.value = boost;
 
         // not boosting and full
         if (_boostRemaining >= _BoostBarSlider.maxValue)
         {
             _BoostBarSlider.gameObject.SetActive(false);
         }
-    }
-
-    private void UpdateBoostBarUI(float boost)
-    {
-        _BoostBarSlider.value = boost;
+        else _BoostBarSlider.gameObject.SetActive(true);
     }
 
     public void BoostStarted()
