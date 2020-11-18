@@ -13,5 +13,5 @@ public static class References
 
     // Gameplay
     public static float GameLengthInMetres;
-    public static float GameSpeed = 5f;
+    public static float GameSpeed = 7f;
 }
