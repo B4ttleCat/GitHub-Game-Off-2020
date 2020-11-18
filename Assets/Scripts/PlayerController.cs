@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem.MinMaxCurve idleParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve regularParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve boostParticleSize;
-
-    private float _currentMoveSpeed;
     
     private Controls _controls = null;
     private Rigidbody2D _rb;
@@ -43,13 +41,23 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _trailParticles.Play();
-        _currentMoveSpeed = _moveSpeedMultiplier;
     }
 
     void Update()
     {
         Vector2 movementInput = ReadMovementInput();
-        Move(movementInput);
+
+        BoostSystem boost = GetComponentInChildren<BoostSystem>();
+        
+        Debug.Log(boost.name);
+        // Debug.Log(boost.isBoosting);
+        
+        if (boost != null)
+        {
+            if (boost.isBoosting) Move(movementInput, boost._boostSpeedMultiplier * _moveSpeedMultiplier);
+            else Move(movementInput, _moveSpeedMultiplier);
+        }
+        
         UpdateParticleSystem(movementInput);
     }
 
@@ -85,9 +93,9 @@ public class PlayerController : MonoBehaviour
         return movement;
     }
 
-    public void Move(Vector2 movement)
+    public void Move(Vector2 movement, float speedMultiplier)
     {
-        Vector2 MultipledMovementVector = movement * _moveSpeedMultiplier * References.GameSpeed;
+        Vector2 MultipledMovementVector = movement * speedMultiplier * References.GameSpeed;
         transform.Translate(MultipledMovementVector * Time.deltaTime);
     }
 }

@@ -10,11 +10,11 @@ public class BoostSystem : MonoBehaviour
     [SerializeField] private Slider _BoostBarSlider;
     [SerializeField] private float _boostDepletionRate;
     [SerializeField] private float _boostFillRate;
-    [SerializeField] private float _boostSpeed;
+    public float _boostSpeedMultiplier;
 
     private float _boostRemaining;
     private PlayerController _player;
-    private bool _isBoosting;
+    public bool isBoosting;
 
     private void Awake()
     {
@@ -43,13 +43,13 @@ public class BoostSystem : MonoBehaviour
     private void CalculateBoost()
     {
         // boosting and more than empty
-        if (_isBoosting && _boostRemaining > _BoostBarSlider.minValue)
+        if (isBoosting && _boostRemaining > _BoostBarSlider.minValue)
         {
             _boostRemaining -= Time.deltaTime * _boostDepletionRate;
         }
 
         // not boosting and less than full
-        else if (!_isBoosting && _boostRemaining < _BoostBarSlider.maxValue)
+        else if (!isBoosting && _boostRemaining < _BoostBarSlider.maxValue)
         {
             _boostRemaining += Time.deltaTime * _boostFillRate;
         }
@@ -72,15 +72,11 @@ public class BoostSystem : MonoBehaviour
     public void BoostStarted()
     {
         if (_boostDepletionRate <= 0) return;
-
-        _isBoosting = true;
-        _player.CurrentMoveSpeed = _boostSpeed;
+        isBoosting = true;
     }
 
     public void BoostEnded()
     {
-        _isBoosting = false;
-        _player.CurrentMoveSpeed = _player.MoveSpeedMultiplier;
-        // Debug.Log($"isDashing = {_isBoosting}");
+        isBoosting = false;
     }
 }
