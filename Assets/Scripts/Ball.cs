@@ -8,6 +8,9 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private bool _isTravelling;
 
+    [SerializeField]
+    private float _hitForce;
+
     private Rigidbody2D _rb;
 
     void Awake()
@@ -25,18 +28,14 @@ public class Ball : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit player");
+            // Get player position
             Vector3 playerPos = other.transform.position;
-            
-            // get direction of player to ball
-            Vector2 angle = (transform.position - playerPos);
-            // float directionToPlayer = Vector2.Angle(transform.position, playerPos);
 
-            
-            // apply force to ball in that direction
-            _rb.AddForce(angle, ForceMode2D.Impulse);
-            
-            // bump it forward
+            // get direction of player to ball
+            Vector2 angle = (transform.position - playerPos).normalized;
+
+            // apply force in that direction to bump it forward
+            _rb.AddForce(angle * _hitForce, ForceMode2D.Impulse);
         }
     }
 }
