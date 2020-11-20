@@ -12,11 +12,17 @@ public class Ball : MonoBehaviour
     private float _hitForce;
 
     private Rigidbody2D _rb;
+    private GameManager _gameManager;
 
     void Awake()
     {
         References.Ball = this;
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -36,6 +42,11 @@ public class Ball : MonoBehaviour
 
             // apply force in that direction to bump it forward
             _rb.AddForce(angle * _hitForce, ForceMode2D.Impulse);
+        }
+
+        if (other.gameObject.CompareTag("Moon"))
+        {
+            _gameManager.EndGame();
         }
     }
 }
