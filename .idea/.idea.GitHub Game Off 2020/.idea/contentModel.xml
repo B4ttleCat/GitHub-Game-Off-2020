@@ -10,6 +10,7 @@
         <e p="Scripts" t="Include">
           <e p="Ball.cs" t="Include" />
           <e p="BoostSystem.cs" t="Include" />
+          <e p="CameraControl.cs" t="Include" />
           <e p="FollowTargetPosition.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InvisibleOffScreen.cs" t="Include" />

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem.MinMaxCurve regularParticleSize;
     [SerializeField] private ParticleSystem.MinMaxCurve boostParticleSize;
 
-    private Controls _controls = null;
+    private Controls _controls;
     private Rigidbody2D _rb;
     private BoostSystem _boost;
 
@@ -27,16 +27,19 @@ public class PlayerController : MonoBehaviour
         _controls = new Controls();
         References.Controls = _controls;
         _boost = GetComponentInChildren<BoostSystem>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
     {
         _controls.Player.Enable();
+        GameManager.onGameOver += GameOver;
     }
 
     private void OnDisable()
     {
         _controls.Player.Disable();
+        GameManager.onGameOver -= GameOver;
     }
 
     private void Start()
@@ -93,5 +96,11 @@ public class PlayerController : MonoBehaviour
         
         Vector2 MultipledMovementVector = movement * speedMultiplier * References.GameSpeed;
         transform.Translate(MultipledMovementVector * Time.deltaTime);
+    }
+
+    private void GameOver()
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.isKinematic = true;
     }
 }

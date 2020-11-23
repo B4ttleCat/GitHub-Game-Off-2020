@@ -4939,7 +4939,7 @@ GameObject:
   - component: {fileID: 34037242}
   - component: {fileID: 34037241}
   m_Layer: 0
-  m_Name: Particles Close
+  m_Name: Particles Near
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9763,6 +9763,10 @@ MonoBehaviour:
   _moon: {fileID: 55845613}
   _endGameCollider: {fileID: 0}
   _endGameObjects: {fileID: 605046113}
+  _particleSystems:
+  - {fileID: 34037242}
+  - {fileID: 2489764}
+  - {fileID: 101446948}
 --- !u!4 &55845615
 Transform:
   m_ObjectHideFlags: 0
@@ -14620,13 +14624,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605046113}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 503ebf445c01842f89f905d35b3204e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 1860470037}
-  _offset: 20
 --- !u!1 &661173274
 GameObject:
   m_ObjectHideFlags: 0
@@ -19923,7 +19926,7 @@ Transform:
   m_GameObject: {fileID: 1317678271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.9, y: 34.27, z: 0}
-  m_LocalScale: {x: 170.89766, y: 41.521862, z: 2.5701}
+  m_LocalScale: {x: 77.1, y: 41.521862, z: 2.5701}
   m_Children: []
   m_Father: {fileID: 605046114}
   m_RootOrder: 0
@@ -19952,7 +19955,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.23203531}
+  m_Size: {x: 0.51, y: 0.23203531}
   m_EdgeRadius: 0
 --- !u!1001 &1389365766
 PrefabInstance:
@@ -20705,6 +20708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879630798}
+  - component: {fileID: 1879630799}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -20729,6 +20733,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879630799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879630797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b159517719e634ed59f10c3de18cecdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1973817407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2954031086127732911, guid: 8e5d20be28e564acda84d16c6714759f, type: 3}

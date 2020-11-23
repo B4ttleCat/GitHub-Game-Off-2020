@@ -1,11 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public static Action onGameOver;
+
     [SerializeField]
     private GameObject _moon;
 
@@ -15,8 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _endGameObjects;
 
+    [Space]
+    [SerializeField]private ParticleSystem[] _particleSystems;
+
     private float _gameTimePassed;
     private bool _isGameOver;
+    private Controls _controls;
 
     public bool IsGameOver
     {
@@ -25,24 +30,21 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _controls = References.Controls;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        // at the start of the game, place the end game objects
-        // at (game SPEED x game TIME) away
-        
         _endGameObjects.transform.position = new Vector2(
-            Camera.main.transform.position.x,
-        (References.GameSpeed * References.GameTimeInSeconds));
+            Camera.main.transform.position.x, (References.GameSpeed * References.GameTimeInSeconds));
         _gameTimePassed = 0f;
+        References.Controls.Player.RestartGame.performed += _ => OnRestartGame();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-  
+
     }
 
     public void EndGame()
@@ -50,5 +52,20 @@ public class GameManager : MonoBehaviour
         _isGameOver = true;
         References.GameSpeed = 0f;
         Debug.Log("Game over, man. Game over.");
+
+        if (onGameOver != null)
+        {
+            onGameOver();
+
+            foreach (ParticleSystem particleSystem in _particleSystems)
+            {
+                particleSystem.Pause();
+            }
+        }
+    }
+
+    private void OnRestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

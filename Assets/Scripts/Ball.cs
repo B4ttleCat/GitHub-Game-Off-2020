@@ -13,11 +13,13 @@ public class Ball : MonoBehaviour
 
     private Rigidbody2D _rb;
     private GameManager _gameManager;
+    private ParticleSystem _ps;
 
     void Awake()
     {
         References.Ball = this;
         _rb = GetComponent<Rigidbody2D>();
+        _ps = GetComponent<ParticleSystem>();
     }
 
     private void Start()
@@ -46,7 +48,15 @@ public class Ball : MonoBehaviour
 
         if (other.gameObject.CompareTag("Moon"))
         {
-            _gameManager.EndGame();
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        _gameManager.EndGame();
+        _rb.velocity = Vector2.zero;
+        _rb.isKinematic = true;
+        _ps.Stop();
     }
 }

@@ -49,6 +49,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RestartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5f73dc7-a19c-4e48-ac29-b3ad2d31bab0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -183,6 +191,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Defence"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1930bd6e-74da-4bb1-bce8-ed04bf4f8b65"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -195,6 +214,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_Offence = m_Player.FindAction("Offence", throwIfNotFound: true);
         m_Player_Defence = m_Player.FindAction("Defence", throwIfNotFound: true);
         m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
+        m_Player_RestartGame = m_Player.FindAction("RestartGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -248,6 +268,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Offence;
     private readonly InputAction m_Player_Defence;
     private readonly InputAction m_Player_Action;
+    private readonly InputAction m_Player_RestartGame;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -256,6 +277,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Offence => m_Wrapper.m_Player_Offence;
         public InputAction @Defence => m_Wrapper.m_Player_Defence;
         public InputAction @Action => m_Wrapper.m_Player_Action;
+        public InputAction @RestartGame => m_Wrapper.m_Player_RestartGame;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -277,6 +299,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Action.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
                 @Action.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
                 @Action.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAction;
+                @RestartGame.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartGame;
+                @RestartGame.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestartGame;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -293,6 +318,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Action.started += instance.OnAction;
                 @Action.performed += instance.OnAction;
                 @Action.canceled += instance.OnAction;
+                @RestartGame.started += instance.OnRestartGame;
+                @RestartGame.performed += instance.OnRestartGame;
+                @RestartGame.canceled += instance.OnRestartGame;
             }
         }
     }
@@ -303,5 +331,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnOffence(InputAction.CallbackContext context);
         void OnDefence(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
+        void OnRestartGame(InputAction.CallbackContext context);
     }
 }

@@ -7,16 +7,6 @@ public class FollowTargetPosition : MonoBehaviour
     [SerializeField]
     private Transform _targetTransform;
 
-    [SerializeField]
-    private float _offset;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         FollowTarget();
@@ -24,6 +14,6 @@ public class FollowTargetPosition : MonoBehaviour
 
     private void FollowTarget()
     {
-        transform.position = new Vector2(_targetTransform.position.x, _targetTransform.position.y + _offset);
+        transform.position = new Vector2(_targetTransform.position.x, transform.position.y);
     }
 }
