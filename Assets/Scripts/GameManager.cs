@@ -16,8 +16,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _endGameObjects;
 
+    [SerializeField]
+    private PlayerController _player1;
+
+    [SerializeField]
+    private PlayerController _player2;
+
+    [SerializeField]
+    private float _gameLength;
+
     [Space]
-    [SerializeField]private ParticleSystem[] _particleSystems;
+    [SerializeField] private ParticleSystem[] _particleSystems;
 
     private float _gameTimePassed;
     private bool _isGameOver;
@@ -30,7 +39,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _gameLength = References.GameTimeInSeconds;
         _controls = References.Controls;
+        References.Player1 = _player1;
+        References.Player2 = _player2;
     }
 
     void Start()
@@ -39,12 +51,10 @@ public class GameManager : MonoBehaviour
             Camera.main.transform.position.x, (References.GameSpeed * References.GameTimeInSeconds));
         _gameTimePassed = 0f;
         References.Controls.Player.RestartGame.performed += _ => OnRestartGame();
-
     }
 
     private void Update()
     {
-
     }
 
     public void EndGame()

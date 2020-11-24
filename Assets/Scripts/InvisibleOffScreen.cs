@@ -28,7 +28,6 @@ public class InvisibleOffScreen : MonoBehaviour
     {
         if (transform.position.y < -_screenHeight)
         {
-            Debug.Log("test");
             Debug.Log($"{gameObject.name} is invisible now");
         }
     }
